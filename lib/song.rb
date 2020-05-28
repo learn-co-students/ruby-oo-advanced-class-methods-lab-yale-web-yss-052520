@@ -51,11 +51,10 @@ class Song
 
   def self.find_or_create_by_name(song_name)
     # binding.pry
-    if self.all_song_names.include?(song_name)
-      self.find_by_name(song_name)
-    elsif self.all_song_names.none?(song_name)
-      self.create_by_name(song_name)
-    end
+    # if self.all_song_names.include?(song_name)
+      self.find_by_name(song_name) || self.create_by_name(song_name)
+    # else 
+    # end
   end
 
   def self.alphabetical
